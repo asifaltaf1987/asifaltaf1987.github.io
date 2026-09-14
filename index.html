@@ -11,7 +11,7 @@
 <title>Asif Altaf — Systems Librarian &amp; Data Systems</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#1c2521;
@@ -22,7 +22,7 @@
     --green:#2f5d50;
     --green-deep:#1f3f37;
     --ochre:#b97a34;
-    --max:920px;
+    --max:960px;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -32,7 +32,9 @@
   }
   body{
     margin:0;
-    background:var(--paper);
+    background:
+      repeating-linear-gradient(to bottom, transparent 0 38px, rgba(201,192,168,0.28) 38px 39px),
+      var(--paper);
     color:var(--ink);
     font-family:"IBM Plex Sans",system-ui,sans-serif;
     line-height:1.55;
@@ -51,240 +53,139 @@
   }
   .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
 
-  /* Header */
   header.site{
     position:sticky; top:0; z-index:10;
-    background:rgba(237,231,216,0.92);
+    background:rgba(237,231,216,0.94);
     backdrop-filter:blur(6px);
     border-bottom:1px solid var(--line);
   }
-  .nav-row{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:16px 0;
-  }
-  .wordmark{
-    font-family:"Source Serif 4",serif;
-    font-size:1.05rem;
-    font-weight:600;
-    text-decoration:none;
-    color:var(--ink);
-    letter-spacing:0.01em;
-  }
-  nav.links{display:flex; gap:26px; align-items:center;}
-  nav.links a{
-    text-decoration:none;
-    color:var(--ink-soft);
-    font-size:0.92rem;
-  }
+  .nav-row{display:flex; align-items:center; justify-content:space-between; padding:16px 0;}
+  .wordmark{font-family:"Source Serif 4",serif; font-size:1.05rem; font-weight:600; text-decoration:none; color:var(--ink);}
+  nav.links{display:flex; gap:24px; align-items:center;}
+  nav.links a{text-decoration:none; color:var(--ink-soft); font-size:0.9rem;}
   nav.links a:hover{color:var(--green-deep);}
-  .menu-toggle{
-    display:none;
-    background:none; border:1px solid var(--line); border-radius:4px;
-    padding:6px 12px; font-family:"IBM Plex Sans",sans-serif; font-size:0.85rem;
-    color:var(--ink); cursor:pointer;
-  }
+  .menu-toggle{display:none; background:none; border:1px solid var(--line); border-radius:4px; padding:6px 12px; font-family:"IBM Plex Sans",sans-serif; font-size:0.85rem; color:var(--ink); cursor:pointer;}
 
-  /* Hero */
-  .hero{padding:76px 0 56px; opacity:0; transform:translateY(8px); animation:heroIn .7s ease forwards;}
+  .hero{padding:80px 0 40px; opacity:0; transform:translateY(8px); animation:heroIn .7s ease forwards;}
   @keyframes heroIn{ to{opacity:1; transform:translateY(0);} }
-  .hero h1{
-    font-size:clamp(2.1rem, 4.4vw, 3.1rem);
-    line-height:1.14;
-    max-width:15ch;
-  }
-  .hero p.lede{
-    max-width:56ch;
-    margin-top:22px;
-    font-size:1.08rem;
-    color:var(--ink-soft);
-  }
-  .hero .role{
-    margin-top:6px;
-    font-size:0.98rem;
-    color:var(--green-deep);
-  }
-  .hero .now{
-    margin-top:18px;
-    font-size:0.92rem;
-    color:var(--ink-soft);
-    border-left:2px solid var(--ochre);
-    padding-left:12px;
-  }
-  .stat-row{
-    margin-top:44px;
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    border-top:1px solid var(--line);
-    border-bottom:1px solid var(--line);
-  }
-  .stat{
-    padding:18px 18px 18px 0;
-    border-left:1px solid var(--line);
-  }
+  .hero h1{font-size:clamp(2.2rem, 4.8vw, 3.3rem); line-height:1.12; max-width:16ch;}
+  .hero p.lede{max-width:58ch; margin-top:22px; font-size:1.08rem; color:var(--ink-soft);}
+  .hero .role{margin-top:6px; font-size:0.98rem; color:var(--green-deep);}
+  .hero .now{margin-top:18px; font-size:0.92rem; color:var(--ink-soft); border-left:2px solid var(--ochre); padding-left:12px; max-width:54ch;}
+
+  .stat-row{margin-top:44px; display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .stat{padding:18px 18px 18px 0; border-left:1px solid var(--line);}
   .stat:first-child{border-left:none; padding-left:0;}
-  .stat .num{
-    font-family:"IBM Plex Mono",monospace;
-    font-size:1.5rem;
+  .stat .num{font-family:"IBM Plex Mono",monospace; font-size:1.5rem; color:var(--green-deep);}
+  .stat .label{font-size:0.85rem; color:var(--ink-soft); margin-top:2px;}
+
+  .quote-band{padding:54px 0; text-align:center;}
+  .quote-band p{
+    font-family:"Source Serif 4",serif;
+    font-style:italic;
+    font-size:clamp(1.3rem,2.6vw,1.75rem);
     color:var(--green-deep);
-  }
-  .stat .label{
-    font-size:0.85rem;
-    color:var(--ink-soft);
-    margin-top:2px;
+    max-width:26ch;
+    margin:0 auto;
+    line-height:1.4;
   }
 
-  /* Sections */
   section{padding:58px 0;}
   section.alt{background:var(--paper-raised); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
-  h2.section-title{
-    font-size:1.5rem;
-    margin-bottom:8px;
-  }
-  p.section-sub{
-    color:var(--ink-soft);
-    max-width:58ch;
-    margin:0 0 32px 0;
-    font-size:0.98rem;
-  }
+  h2.section-title{font-size:1.55rem; margin-bottom:8px;}
+  p.section-sub{color:var(--ink-soft); max-width:60ch; margin:0 0 32px 0; font-size:0.98rem;}
 
-  /* Skills bridge */
-  .bridge{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:0;
-    border:1px solid var(--line);
-  }
+  .bridge{display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid var(--line);}
   .bridge-col{padding:26px 28px;}
   .bridge-col:first-child{border-right:1px solid var(--line);}
-  .bridge-col h3{font-size:1.02rem; margin-bottom:14px; color:var(--ink);}
+  .bridge-col h3{font-size:1.02rem; margin-bottom:14px;}
   .bridge-col ul{list-style:none; margin:0; padding:0;}
-  .bridge-col li{
-    padding:7px 0;
-    border-bottom:1px dotted var(--line);
-    font-size:0.95rem;
-    color:var(--ink-soft);
-  }
+  .bridge-col li{padding:7px 0; border-bottom:1px dotted var(--line); font-size:0.95rem; color:var(--ink-soft);}
   .bridge-col li:last-child{border-bottom:none;}
 
-  /* Timeline */
-  .timeline{border-top:1px solid var(--line);}
-  .tl-row{
-    display:grid;
-    grid-template-columns:120px 24px 1fr;
-    gap:0;
-    padding:20px 0;
-    border-bottom:1px solid var(--line);
-  }
-  .tl-row:last-child{border-bottom:none;}
-  .tl-years{
+  /* Live systems grid */
+  .live-grid{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line);}
+  .live-card{background:var(--paper); padding:24px 26px; display:flex; flex-direction:column; gap:8px;}
+  .live-card .badge{
+    align-self:flex-start;
     font-family:"IBM Plex Mono",monospace;
-    font-size:0.82rem;
+    font-size:0.7rem;
+    letter-spacing:0.02em;
     color:var(--green-deep);
-    padding-top:2px;
+    background:rgba(47,93,80,0.1);
+    border:1px solid rgba(47,93,80,0.35);
+    border-radius:3px;
+    padding:2px 7px;
   }
-  .tl-dot{display:flex; justify-content:center;}
-  .tl-dot span{
-    width:8px; height:8px; border-radius:50%;
-    background:var(--ochre);
+  .live-card h3{font-size:1.05rem;}
+  .live-card p{margin:0; color:var(--ink-soft); font-size:0.92rem;}
+  .live-card a.visit{
     margin-top:6px;
+    font-size:0.88rem;
+    text-decoration:none;
+    color:var(--green-deep);
+    border-bottom:1px solid var(--green-deep);
+    align-self:flex-start;
+    padding-bottom:1px;
   }
+  .live-card a.visit:hover{color:var(--ochre); border-color:var(--ochre);}
+
+  .timeline{border-top:1px solid var(--line);}
+  .tl-row{display:grid; grid-template-columns:120px 24px 1fr; gap:0; padding:20px 0; border-bottom:1px solid var(--line);}
+  .tl-row:last-child{border-bottom:none;}
+  .tl-years{font-family:"IBM Plex Mono",monospace; font-size:0.82rem; color:var(--green-deep); padding-top:2px;}
+  .tl-dot{display:flex; justify-content:center;}
+  .tl-dot span{width:8px; height:8px; border-radius:50%; background:var(--ochre); margin-top:6px; display:block;}
   .tl-row h3{font-size:1.02rem; margin-bottom:4px;}
   .tl-row p{margin:0; color:var(--ink-soft); font-size:0.93rem; max-width:56ch;}
 
-  /* Projects */
-  .project{
-    display:grid;
-    grid-template-columns:auto 1fr;
-    gap:22px;
-    padding:26px 0;
-    border-bottom:1px solid var(--line);
-  }
+  .project{display:grid; grid-template-columns:auto 1fr; gap:22px; padding:26px 0; border-bottom:1px solid var(--line);}
   .project:last-child{border-bottom:none;}
-  .project .tag{
-    font-family:"IBM Plex Mono",monospace;
-    font-size:0.78rem;
-    color:var(--green-deep);
-    white-space:nowrap;
-    padding-top:4px;
-  }
+  .project .tag{font-family:"IBM Plex Mono",monospace; font-size:0.78rem; color:var(--green-deep); white-space:nowrap; padding-top:4px;}
   .project h3{font-size:1.15rem; margin-bottom:6px;}
   .project p{margin:0 0 10px 0; color:var(--ink-soft); max-width:60ch;}
-  .project .stack{
-    font-size:0.85rem;
-    color:var(--ink-soft);
-    margin-bottom:10px;
-  }
-  .project a.link{
-    font-size:0.9rem;
-    text-decoration:none;
-    border-bottom:1px solid var(--green-deep);
-    padding-bottom:1px;
-  }
+  .project .stack{font-size:0.85rem; color:var(--ink-soft); margin-bottom:10px;}
+  .project a.link{font-size:0.9rem; text-decoration:none; border-bottom:1px solid var(--green-deep); padding-bottom:1px;}
   .project a.link:hover{color:var(--ochre); border-color:var(--ochre);}
 
-  /* Certifications + publications */
-  .flat-list{
-    display:flex; flex-direction:column; gap:0;
-    border-top:1px solid var(--line);
-  }
-  .flat-list .row{
-    display:flex; justify-content:space-between; gap:20px;
-    padding:14px 0;
-    border-bottom:1px solid var(--line);
-    font-size:0.96rem;
-  }
+  .flat-list{display:flex; flex-direction:column; gap:0; border-top:1px solid var(--line);}
+  .flat-list .row{display:flex; justify-content:space-between; gap:20px; padding:14px 0; border-bottom:1px solid var(--line); font-size:0.96rem;}
   .flat-list .row .name{color:var(--ink);}
   .flat-list .row .meta{color:var(--ink-soft); font-size:0.88rem; white-space:nowrap;}
 
-  .pub-note{
-    margin-top:26px;
-    font-size:0.96rem;
-    color:var(--ink-soft);
-  }
+  /* Publications */
+  .pub-list{border-top:1px solid var(--line);}
+  .pub{display:grid; grid-template-columns:52px 1fr; gap:16px; padding:16px 0; border-bottom:1px solid var(--line);}
+  .pub:last-child{border-bottom:none;}
+  .pub .year{font-family:"IBM Plex Mono",monospace; font-size:0.85rem; color:var(--green-deep); padding-top:2px;}
+  .pub .title{font-size:0.98rem; color:var(--ink); margin:0 0 3px 0;}
+  .pub .venue{font-size:0.87rem; color:var(--ink-soft); font-style:italic;}
+  .pub a.read{font-size:0.85rem; text-decoration:none; color:var(--green-deep); border-bottom:1px solid var(--green-deep); margin-left:10px; padding-bottom:1px;}
+  .pub a.read:hover{color:var(--ochre); border-color:var(--ochre);}
+  .pub-note{margin-top:22px; font-size:0.94rem; color:var(--ink-soft);}
 
-  /* Footer / contact */
-  footer{
-    padding:56px 0 70px;
-  }
+  footer{padding:56px 0 70px;}
   footer h2{font-size:1.5rem; max-width:16ch;}
-  .contact-list{
-    margin-top:26px;
-    display:flex; flex-wrap:wrap; gap:10px 30px;
-  }
-  .contact-list a{
-    text-decoration:none;
-    font-size:0.98rem;
-    color:var(--green-deep);
-    border-bottom:1px solid transparent;
-  }
+  .contact-list{margin-top:26px; display:flex; flex-wrap:wrap; gap:10px 30px;}
+  .contact-list a{text-decoration:none; font-size:0.98rem; color:var(--green-deep); border-bottom:1px solid transparent;}
   .contact-list a:hover{border-bottom-color:var(--green-deep);}
-  .fine{
-    margin-top:40px;
-    font-size:0.82rem;
-    color:var(--ink-soft);
-  }
+  .fine{margin-top:40px; font-size:0.82rem; color:var(--ink-soft);}
 
   @media (max-width:700px){
     .stat-row{grid-template-columns:repeat(2,1fr);}
     .stat:nth-child(3){border-left:none; padding-left:0;}
     .bridge{grid-template-columns:1fr;}
     .bridge-col:first-child{border-right:none; border-bottom:1px solid var(--line);}
+    .live-grid{grid-template-columns:1fr;}
     .project{grid-template-columns:1fr;}
     .tl-row{grid-template-columns:90px 20px 1fr;}
+    .pub{grid-template-columns:40px 1fr;}
   }
   @media (max-width:560px){
     .menu-toggle{display:inline-block;}
-    nav.links{
-      display:none;
-      position:absolute; top:100%; left:0; right:0;
-      flex-direction:column; gap:0;
-      background:var(--paper-raised);
-      border-bottom:1px solid var(--line);
-      padding:8px 28px 16px;
-    }
+    nav.links{display:none; position:absolute; top:100%; left:0; right:0; flex-direction:column; gap:0; background:var(--paper-raised); border-bottom:1px solid var(--line); padding:8px 28px 16px;}
     nav.links.open{display:flex;}
     nav.links a{padding:10px 0; border-bottom:1px dotted var(--line);}
-    header.site{position:sticky;}
   }
 </style>
 </head>
@@ -295,10 +196,10 @@
     <a class="wordmark" href="#top">Asif Altaf</a>
     <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
     <nav class="links" id="navLinks">
-      <a href="#work">Work</a>
+      <a href="#systems">Live systems</a>
       <a href="#path">Path</a>
       <a href="#projects">Projects</a>
-      <a href="#credentials">Credentials</a>
+      <a href="#publications">Publications</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -317,26 +218,54 @@
     <p class="now">Currently deepening applied statistics, SQL, and machine learning fundamentals alongside my day-to-day systems work.</p>
 
     <div class="stat-row">
-      <div class="stat">
-        <div class="num">16+</div>
-        <div class="label">years in academic libraries</div>
-      </div>
-      <div class="stat">
-        <div class="num">4</div>
-        <div class="label">countries of ILS/discovery admin</div>
-      </div>
-      <div class="stat">
-        <div class="num">12+</div>
-        <div class="label">peer-reviewed publications</div>
-      </div>
-      <div class="stat">
-        <div class="num">3</div>
-        <div class="label">Ex Libris certifications</div>
-      </div>
+      <div class="stat"><div class="num">16+</div><div class="label">years in academic libraries</div></div>
+      <div class="stat"><div class="num">4</div><div class="label">countries of ILS/discovery admin</div></div>
+      <div class="stat"><div class="num">12+</div><div class="label">peer-reviewed publications</div></div>
+      <div class="stat"><div class="num">3</div><div class="label">Ex Libris certifications</div></div>
     </div>
   </div>
 
-  <section id="work" class="alt">
+  <div class="wrap quote-band">
+    <p>&ldquo;A good discovery layer and a good data pipeline solve the same problem &mdash; getting the right information to the right person, fast.&rdquo;</p>
+  </div>
+
+  <section id="systems" class="alt">
+    <div class="wrap">
+      <h2 class="section-title">Live systems</h2>
+      <p class="section-sub">
+        Production systems I have built or currently administer, in use by real students,
+        faculty, and researchers today.
+      </p>
+      <div class="live-grid">
+        <div class="live-card">
+          <span class="badge">Live · AI chatbot</span>
+          <h3>LAIRA</h3>
+          <p>Library AI Research Assistant for RCSI Bahrain — built end to end and deployed to production.</p>
+          <a class="visit" href="https://laira.rcsi-mub.com/" target="_blank" rel="noopener">laira.rcsi-mub.com ↗</a>
+        </div>
+        <div class="live-card">
+          <span class="badge">Live · Discovery</span>
+          <h3>HS Mittweida Primo NDE</h3>
+          <p>Discovery layer I currently configure and maintain at Hochschule Mittweida.</p>
+          <a class="visit" href="https://hs-mittweida.primo.exlibrisgroup.com/nde/home?vid=49MIT_INST:MIT_VU1_NDE&lang=de&sortby=rank" target="_blank" rel="noopener">hs-mittweida.primo.exlibrisgroup.com ↗</a>
+        </div>
+        <div class="live-card">
+          <span class="badge">Live · Discovery</span>
+          <h3>RCSI Bahrain Primo NDE</h3>
+          <p>Led the migration to Primo New Discovery Experience during my time at RCSI Bahrain.</p>
+          <a class="visit" href="https://rcsibahrain.primo.exlibrisgroup.com/nde/home?vid=973RCSIB_INST:NDE&lang=en" target="_blank" rel="noopener">rcsibahrain.primo.exlibrisgroup.com ↗</a>
+        </div>
+        <div class="live-card">
+          <span class="badge">Live · LibGuides</span>
+          <h3>RCSI Bahrain LibGuides</h3>
+          <p>Springshare LibApps suite (LibGuides, LibAnswers, LibCal) I managed and restructured.</p>
+          <a class="visit" href="https://library.rcsi-mub.com/libguides" target="_blank" rel="noopener">library.rcsi-mub.com/libguides ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
     <div class="wrap">
       <h2 class="section-title">Where the two sides meet</h2>
       <p class="section-sub">
@@ -360,7 +289,7 @@
             <li>Python, LangChain, GPT/OpenAI APIs</li>
             <li>ChromaDB, Streamlit, retrieval-augmented chatbots</li>
             <li>OpenAlex &amp; Scopus API data pipelines</li>
-            <li>GitHub Actions / GitLab CI automation</li>
+            <li>GitHub Actions / GitLab CI, Cloudflare Workers</li>
             <li>Google Charts, interactive dashboards</li>
           </ul>
         </div>
@@ -368,7 +297,7 @@
     </div>
   </section>
 
-  <section id="path">
+  <section id="path" class="alt">
     <div class="wrap">
       <h2 class="section-title">Path</h2>
       <p class="section-sub">Four countries, one continuous line from technical services to systems and now data.</p>
@@ -397,7 +326,7 @@
     </div>
   </section>
 
-  <section id="projects" class="alt">
+  <section id="projects">
     <div class="wrap">
       <h2 class="section-title">Selected projects</h2>
       <p class="section-sub">
@@ -411,8 +340,8 @@
           <h3>LAIRA — Library AI Research Assistant</h3>
           <p>
             A retrieval-augmented chatbot for RCSI Bahrain Library, integrated with Primo,
-            Springshare LibApps (LibGuides, LibAnswers, LibCal), and the institutional repository.
-            Includes an admin logging panel, user feedback collection, and analytics.
+            Springshare LibApps, and the institutional repository. Includes an admin logging
+            panel, user feedback collection, and analytics.
           </p>
           <div class="stack">Python · LangChain · ChromaDB · Streamlit · GPT-4o-mini</div>
           <a class="link" href="https://laira.rcsi-mub.com/" target="_blank" rel="noopener">laira.rcsi-mub.com</a>
@@ -425,11 +354,10 @@
           <h3>HSM Research Dashboard</h3>
           <p>
             A self-updating publications dashboard for Hochschule Mittweida built on the OpenAlex
-            API, with a weekly automated pipeline and interactive, filterable charts by topic
-            and year.
+            API, with an automated pipeline and interactive, filterable charts by topic and year.
           </p>
-          <div class="stack">OpenAlex API · GitHub Actions / GitLab CI · GitHub Pages</div>
-          <a class="link" href="https://asifaltaf1987.github.io/hsm-research-dashboard/" target="_blank" rel="noopener">asifaltaf1987.github.io/hsm-research-dashboard</a>
+          <div class="stack">OpenAlex API · GitLab CI · Cloudflare Workers</div>
+          <a class="link" href="https://hsm-research-dashboard.hochschulbibliothek.workers.dev/" target="_blank" rel="noopener">hsm-research-dashboard.hochschulbibliothek.workers.dev</a>
         </div>
       </div>
 
@@ -445,14 +373,12 @@
           <div class="stack">Alma Analytics · SUSHI/COUNTER · Google Charts</div>
         </div>
       </div>
-
     </div>
   </section>
 
-  <section id="credentials">
+  <section id="credentials" class="alt">
     <div class="wrap">
-      <h2 class="section-title">Credentials &amp; publications</h2>
-
+      <h2 class="section-title">Credentials</h2>
       <div class="flat-list">
         <div class="row"><span class="name">PhD, Information Management</span><span class="meta">UiTM, Malaysia — 2024</span></div>
         <div class="row"><span class="name">MSc, Library &amp; Information Science</span><span class="meta">University of the Punjab</span></div>
@@ -460,10 +386,74 @@
         <div class="row"><span class="name">Primo VE Certified Administrator</span><span class="meta">Ex Libris — 2023</span></div>
         <div class="row"><span class="name">Primo NDE Certified Administrator</span><span class="meta">Ex Libris — 2025</span></div>
       </div>
+    </div>
+  </section>
 
+  <section id="publications">
+    <div class="wrap">
+      <h2 class="section-title">Publications</h2>
+      <p class="section-sub">Selected peer-reviewed work — full list of 12+ articles on Google Scholar.</p>
+      <div class="pub-list">
+        <div class="pub">
+          <div class="year">2026</div>
+          <div>
+            <p class="title">Exploring Information Literacy Skills, Attitudes, and Barriers Among Medical and Nursing Students in Bahrain</p>
+            <span class="venue">Communications in Information Literacy, 20(1)</span>
+            <a class="read" href="https://doi.org/10.15760/comminfolit.2026.20.1.4" target="_blank" rel="noopener">Read →</a>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="year">2026</div>
+          <div>
+            <p class="title">Automating e-resource usage statistics: a practical guide to implementing SUSHI protocol</p>
+            <span class="venue">Journal of Electronic Resources Librarianship</span>
+            <a class="read" href="https://doi.org/10.1080/1941126X.2026.2654988" target="_blank" rel="noopener">Read →</a>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="year">2026</div>
+          <div>
+            <p class="title">Supporting undergraduate success in professional programs: a user-centered assessment of library services</p>
+            <span class="venue">College &amp; Undergraduate Libraries, 33(2)</span>
+            <a class="read" href="https://doi.org/10.1080/10691316.2026.2651075" target="_blank" rel="noopener">Read →</a>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="year">2024</div>
+          <div>
+            <p class="title">Work Design Impact on the Performance of Pakistani Academic Librarians</p>
+            <span class="venue">The International Information &amp; Library Review</span>
+            <a class="read" href="https://doi.org/10.1080/10572317.2024.2406038" target="_blank" rel="noopener">Read →</a>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="year">2024</div>
+          <div>
+            <p class="title">Perceived misinformation, disinformation and malinformation experience and the relationship with information overload</p>
+            <span class="venue">Record and Library Journal, 10(2)</span>
+            <a class="read" href="https://doi.org/10.20473/rlj.V10-I2.2024.212-234" target="_blank" rel="noopener">Read →</a>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="year">2024</div>
+          <div>
+            <p class="title">Making Sense of Work Engagement: A Qualitative Inquiry with Pakistani Librarians</p>
+            <span class="venue">Library Philosophy and Practice — open access</span>
+            <a class="read" href="https://digitalcommons.unl.edu/libphilprac/8184" target="_blank" rel="noopener">Full text →</a>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="year">2023</div>
+          <div>
+            <p class="title">Research Productivity of Pakistani Female LIS Authors, 1977 to 2020: A Bibliometric Analysis</p>
+            <span class="venue">Sage Open, 13(4)</span>
+            <a class="read" href="https://doi.org/10.1177/21582440231207188" target="_blank" rel="noopener">Read →</a>
+          </div>
+        </div>
+      </div>
       <p class="pub-note">
-        12+ peer-reviewed articles across library and information science, bibliometrics, and AI
-        in libraries — full list on
+        Plus book chapters and 5+ earlier articles (2017–2021) on social media in libraries,
+        COVID-19 bibliometrics, and electronic resource awareness — full list with abstracts on
         <a href="https://scholar.google.com/citations?user=7ADbosAAAAAJ" target="_blank" rel="noopener">Google Scholar</a>.
       </p>
     </div>
