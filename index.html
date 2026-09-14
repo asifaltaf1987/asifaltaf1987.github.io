@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Asif Altaf — Systems Librarian at Hochschule Mittweida, building data pipelines, dashboards, and AI tools on top of library systems.">
+<meta property="og:title" content="Asif Altaf — Systems Librarian & Data Systems">
+<meta property="og:description" content="Sixteen years administering Alma and Primo across four countries, now building the data and AI layer on top of them.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231c2521'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' fill='%23ede7d8' text-anchor='middle'%3EAA%3C/text%3E%3C/svg%3E">
+<title>Asif Altaf — Systems Librarian &amp; Data Systems</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c2521;
+    --ink-soft:#3d4b45;
+    --paper:#ede7d8;
+    --paper-raised:#f5f1e6;
+    --line:#c9c0a8;
+    --green:#2f5d50;
+    --green-deep:#1f3f37;
+    --ochre:#b97a34;
+    --max:920px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,sans-serif;
+    line-height:1.55;
+    font-size:17px;
+  }
+  a{color:var(--green-deep);}
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--ochre);
+    outline-offset:3px;
+  }
+  h1,h2,h3{
+    font-family:"Source Serif 4",Georgia,serif;
+    font-weight:600;
+    color:var(--ink);
+    margin:0;
+  }
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+
+  /* Header */
+  header.site{
+    position:sticky; top:0; z-index:10;
+    background:rgba(237,231,216,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-row{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 0;
+  }
+  .wordmark{
+    font-family:"Source Serif 4",serif;
+    font-size:1.05rem;
+    font-weight:600;
+    text-decoration:none;
+    color:var(--ink);
+    letter-spacing:0.01em;
+  }
+  nav.links{display:flex; gap:26px; align-items:center;}
+  nav.links a{
+    text-decoration:none;
+    color:var(--ink-soft);
+    font-size:0.92rem;
+  }
+  nav.links a:hover{color:var(--green-deep);}
+  .menu-toggle{
+    display:none;
+    background:none; border:1px solid var(--line); border-radius:4px;
+    padding:6px 12px; font-family:"IBM Plex Sans",sans-serif; font-size:0.85rem;
+    color:var(--ink); cursor:pointer;
+  }
+
+  /* Hero */
+  .hero{padding:76px 0 56px; opacity:0; transform:translateY(8px); animation:heroIn .7s ease forwards;}
+  @keyframes heroIn{ to{opacity:1; transform:translateY(0);} }
+  .hero h1{
+    font-size:clamp(2.1rem, 4.4vw, 3.1rem);
+    line-height:1.14;
+    max-width:15ch;
+  }
+  .hero p.lede{
+    max-width:56ch;
+    margin-top:22px;
+    font-size:1.08rem;
+    color:var(--ink-soft);
+  }
+  .hero .role{
+    margin-top:6px;
+    font-size:0.98rem;
+    color:var(--green-deep);
+  }
+  .hero .now{
+    margin-top:18px;
+    font-size:0.92rem;
+    color:var(--ink-soft);
+    border-left:2px solid var(--ochre);
+    padding-left:12px;
+  }
+  .stat-row{
+    margin-top:44px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .stat{
+    padding:18px 18px 18px 0;
+    border-left:1px solid var(--line);
+  }
+  .stat:first-child{border-left:none; padding-left:0;}
+  .stat .num{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:1.5rem;
+    color:var(--green-deep);
+  }
+  .stat .label{
+    font-size:0.85rem;
+    color:var(--ink-soft);
+    margin-top:2px;
+  }
+
+  /* Sections */
+  section{padding:58px 0;}
+  section.alt{background:var(--paper-raised); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  h2.section-title{
+    font-size:1.5rem;
+    margin-bottom:8px;
+  }
+  p.section-sub{
+    color:var(--ink-soft);
+    max-width:58ch;
+    margin:0 0 32px 0;
+    font-size:0.98rem;
+  }
+
+  /* Skills bridge */
+  .bridge{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0;
+    border:1px solid var(--line);
+  }
+  .bridge-col{padding:26px 28px;}
+  .bridge-col:first-child{border-right:1px solid var(--line);}
+  .bridge-col h3{font-size:1.02rem; margin-bottom:14px; color:var(--ink);}
+  .bridge-col ul{list-style:none; margin:0; padding:0;}
+  .bridge-col li{
+    padding:7px 0;
+    border-bottom:1px dotted var(--line);
+    font-size:0.95rem;
+    color:var(--ink-soft);
+  }
+  .bridge-col li:last-child{border-bottom:none;}
+
+  /* Timeline */
+  .timeline{border-top:1px solid var(--line);}
+  .tl-row{
+    display:grid;
+    grid-template-columns:120px 24px 1fr;
+    gap:0;
+    padding:20px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .tl-row:last-child{border-bottom:none;}
+  .tl-years{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:0.82rem;
+    color:var(--green-deep);
+    padding-top:2px;
+  }
+  .tl-dot{display:flex; justify-content:center;}
+  .tl-dot span{
+    width:8px; height:8px; border-radius:50%;
+    background:var(--ochre);
+    margin-top:6px;
+  }
+  .tl-row h3{font-size:1.02rem; margin-bottom:4px;}
+  .tl-row p{margin:0; color:var(--ink-soft); font-size:0.93rem; max-width:56ch;}
+
+  /* Projects */
+  .project{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:22px;
+    padding:26px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .project:last-child{border-bottom:none;}
+  .project .tag{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:0.78rem;
+    color:var(--green-deep);
+    white-space:nowrap;
+    padding-top:4px;
+  }
+  .project h3{font-size:1.15rem; margin-bottom:6px;}
+  .project p{margin:0 0 10px 0; color:var(--ink-soft); max-width:60ch;}
+  .project .stack{
+    font-size:0.85rem;
+    color:var(--ink-soft);
+    margin-bottom:10px;
+  }
+  .project a.link{
+    font-size:0.9rem;
+    text-decoration:none;
+    border-bottom:1px solid var(--green-deep);
+    padding-bottom:1px;
+  }
+  .project a.link:hover{color:var(--ochre); border-color:var(--ochre);}
+
+  /* Certifications + publications */
+  .flat-list{
+    display:flex; flex-direction:column; gap:0;
+    border-top:1px solid var(--line);
+  }
+  .flat-list .row{
+    display:flex; justify-content:space-between; gap:20px;
+    padding:14px 0;
+    border-bottom:1px solid var(--line);
+    font-size:0.96rem;
+  }
+  .flat-list .row .name{color:var(--ink);}
+  .flat-list .row .meta{color:var(--ink-soft); font-size:0.88rem; white-space:nowrap;}
+
+  .pub-note{
+    margin-top:26px;
+    font-size:0.96rem;
+    color:var(--ink-soft);
+  }
+
+  /* Footer / contact */
+  footer{
+    padding:56px 0 70px;
+  }
+  footer h2{font-size:1.5rem; max-width:16ch;}
+  .contact-list{
+    margin-top:26px;
+    display:flex; flex-wrap:wrap; gap:10px 30px;
+  }
+  .contact-list a{
+    text-decoration:none;
+    font-size:0.98rem;
+    color:var(--green-deep);
+    border-bottom:1px solid transparent;
+  }
+  .contact-list a:hover{border-bottom-color:var(--green-deep);}
+  .fine{
+    margin-top:40px;
+    font-size:0.82rem;
+    color:var(--ink-soft);
+  }
+
+  @media (max-width:700px){
+    .stat-row{grid-template-columns:repeat(2,1fr);}
+    .stat:nth-child(3){border-left:none; padding-left:0;}
+    .bridge{grid-template-columns:1fr;}
+    .bridge-col:first-child{border-right:none; border-bottom:1px solid var(--line);}
+    .project{grid-template-columns:1fr;}
+    .tl-row{grid-template-columns:90px 20px 1fr;}
+  }
+  @media (max-width:560px){
+    .menu-toggle{display:inline-block;}
+    nav.links{
+      display:none;
+      position:absolute; top:100%; left:0; right:0;
+      flex-direction:column; gap:0;
+      background:var(--paper-raised);
+      border-bottom:1px solid var(--line);
+      padding:8px 28px 16px;
+    }
+    nav.links.open{display:flex;}
+    nav.links a{padding:10px 0; border-bottom:1px dotted var(--line);}
+    header.site{position:sticky;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-row" style="position:relative;">
+    <a class="wordmark" href="#top">Asif Altaf</a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <nav class="links" id="navLinks">
+      <a href="#work">Work</a>
+      <a href="#path">Path</a>
+      <a href="#projects">Projects</a>
+      <a href="#credentials">Credentials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <div class="wrap hero">
+    <p class="role">Systems Librarian, Hochschule Mittweida — Mittweida, Germany</p>
+    <h1>I turn library systems into data systems.</h1>
+    <p class="lede">
+      Sixteen years administering Alma, Primo, and their predecessors across Germany, Bahrain,
+      Saudi Arabia, and Pakistan. These days that work increasingly means building the pipelines,
+      dashboards, and AI tools that sit on top of them — not just configuring the systems themselves.
+    </p>
+    <p class="now">Currently deepening applied statistics, SQL, and machine learning fundamentals alongside my day-to-day systems work.</p>
+
+    <div class="stat-row">
+      <div class="stat">
+        <div class="num">16+</div>
+        <div class="label">years in academic libraries</div>
+      </div>
+      <div class="stat">
+        <div class="num">4</div>
+        <div class="label">countries of ILS/discovery admin</div>
+      </div>
+      <div class="stat">
+        <div class="num">12+</div>
+        <div class="label">peer-reviewed publications</div>
+      </div>
+      <div class="stat">
+        <div class="num">3</div>
+        <div class="label">Ex Libris certifications</div>
+      </div>
+    </div>
+  </div>
+
+  <section id="work" class="alt">
+    <div class="wrap">
+      <h2 class="section-title">Where the two sides meet</h2>
+      <p class="section-sub">
+        Library systems administration and applied data work draw on the same underlying skills —
+        structured data, APIs, automation, and reading what usage patterns actually mean.
+      </p>
+      <div class="bridge">
+        <div class="bridge-col">
+          <h3>Library systems</h3>
+          <ul>
+            <li>Alma — configuration, normalization rules, Analytics</li>
+            <li>Primo VE / Primo NDE — discovery layer, UI, ranking</li>
+            <li>SUSHI / COUNTER usage statistics automation</li>
+            <li>MARC21, RDA, LCSH, DSpace</li>
+            <li>EZproxy, Shibboleth/Azure AD access control</li>
+          </ul>
+        </div>
+        <div class="bridge-col">
+          <h3>Data &amp; AI</h3>
+          <ul>
+            <li>Python, LangChain, GPT/OpenAI APIs</li>
+            <li>ChromaDB, Streamlit, retrieval-augmented chatbots</li>
+            <li>OpenAlex &amp; Scopus API data pipelines</li>
+            <li>GitHub Actions / GitLab CI automation</li>
+            <li>Google Charts, interactive dashboards</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="path">
+    <div class="wrap">
+      <h2 class="section-title">Path</h2>
+      <p class="section-sub">Four countries, one continuous line from technical services to systems and now data.</p>
+      <div class="timeline">
+        <div class="tl-row">
+          <div class="tl-years">2026 —</div>
+          <div class="tl-dot"><span></span></div>
+          <div><h3>Hochschule Mittweida, Germany</h3><p>Systems Librarian — Alma, Primo NDE, Analytics, EU AI Act compliance review.</p></div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-years">2022–2026</div>
+          <div class="tl-dot"><span></span></div>
+          <div><h3>RCSI Bahrain</h3><p>Manager, Library Digital Initiatives, Services &amp; Systems. Built LAIRA; led Heritage → Alma/Primo VE and Primo VE → NDE migrations.</p></div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-years">2013–2022</div>
+          <div class="tl-dot"><span></span></div>
+          <div><h3>KFUPM, Saudi Arabia</h3><p>Librarian, Systems &amp; E-Resources. Symphony → Sierra migration, RFID, e-resources.</p></div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-years">2009–2013</div>
+          <div class="tl-dot"><span></span></div>
+          <div><h3>LUMS, Pakistan</h3><p>Technical Services, then Serials &amp; Law liaison. MARC21 cataloging, early social-media library services.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="alt">
+    <div class="wrap">
+      <h2 class="section-title">Selected projects</h2>
+      <p class="section-sub">
+        Three systems built and maintained end to end — from API integration through to
+        production deployment.
+      </p>
+
+      <div class="project">
+        <div class="tag">01 — AI</div>
+        <div>
+          <h3>LAIRA — Library AI Research Assistant</h3>
+          <p>
+            A retrieval-augmented chatbot for RCSI Bahrain Library, integrated with Primo,
+            Springshare LibApps (LibGuides, LibAnswers, LibCal), and the institutional repository.
+            Includes an admin logging panel, user feedback collection, and analytics.
+          </p>
+          <div class="stack">Python · LangChain · ChromaDB · Streamlit · GPT-4o-mini</div>
+          <a class="link" href="https://laira.rcsi-mub.com/" target="_blank" rel="noopener">laira.rcsi-mub.com</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="tag">02 — Data</div>
+        <div>
+          <h3>HSM Research Dashboard</h3>
+          <p>
+            A self-updating publications dashboard for Hochschule Mittweida built on the OpenAlex
+            API, with a weekly automated pipeline and interactive, filterable charts by topic
+            and year.
+          </p>
+          <div class="stack">OpenAlex API · GitHub Actions / GitLab CI · GitHub Pages</div>
+          <a class="link" href="https://asifaltaf1987.github.io/hsm-research-dashboard/" target="_blank" rel="noopener">asifaltaf1987.github.io/hsm-research-dashboard</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="tag">03 — Analytics</div>
+        <div>
+          <h3>Alma Analytics usage-trend visualizations</h3>
+          <p>
+            Interactive charts built on SUSHI/COUNTER usage data pulled from Alma Analytics across
+            all e-resource vendors, with a priority-coalesce formula reconciling overlapping
+            report types (PR, TR, DR, IR).
+          </p>
+          <div class="stack">Alma Analytics · SUSHI/COUNTER · Google Charts</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="credentials">
+    <div class="wrap">
+      <h2 class="section-title">Credentials &amp; publications</h2>
+
+      <div class="flat-list">
+        <div class="row"><span class="name">PhD, Information Management</span><span class="meta">UiTM, Malaysia — 2024</span></div>
+        <div class="row"><span class="name">MSc, Library &amp; Information Science</span><span class="meta">University of the Punjab</span></div>
+        <div class="row"><span class="name">Alma Certified Administrator</span><span class="meta">Ex Libris — 2023</span></div>
+        <div class="row"><span class="name">Primo VE Certified Administrator</span><span class="meta">Ex Libris — 2023</span></div>
+        <div class="row"><span class="name">Primo NDE Certified Administrator</span><span class="meta">Ex Libris — 2025</span></div>
+      </div>
+
+      <p class="pub-note">
+        12+ peer-reviewed articles across library and information science, bibliometrics, and AI
+        in libraries — full list on
+        <a href="https://scholar.google.com/citations?user=7ADbosAAAAAJ" target="_blank" rel="noopener">Google Scholar</a>.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Open to conversations about data, AI, and library systems.</h2>
+    <div class="contact-list">
+      <a href="mailto:asifaltaf1987@gmail.com">asifaltaf1987@gmail.com</a>
+      <a href="https://linkedin.com/in/asifaltaf87" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/asifaltaf1987" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://scholar.google.com/citations?user=7ADbosAAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+    </div>
+    <p class="fine">Mittweida, Saxony, Germany</p>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('menuToggle');
+  var links = document.getElementById('navLinks');
+  if(toggle){
+    toggle.addEventListener('click', function(){
+      var open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    links.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+</script>
+
+</body>
+</html>
