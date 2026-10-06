@@ -404,11 +404,17 @@
           <p>Springshare LibApps suite (LibGuides, LibAnswers, LibCal) I managed and restructured.</p>
           <a class="visit" href="https://library.rcsi-mub.com/libguides" target="_blank" rel="noopener">library.rcsi-mub.com/libguides <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
         </div>
-        <div class="live-card reveal" style="--accent:var(--amber); grid-column:1 / -1;">
+        <div class="live-card reveal" style="--accent:var(--teal)">
+          <span class="badge">Built · Infrastructure</span>
+          <h3>EZproxy access server</h3>
+          <p>Self-hosted EZproxy for off-campus access to e-resources, set up in-house without external support or training. 11+ years of EZproxy administration at KFUPM and RCSI Bahrain.</p>
+          <a class="visit" href="#projects" data-panel-link="5">Project details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+        </div>
+        <div class="live-card reveal" style="--accent:var(--amber)">
           <span class="badge">In development</span>
           <h3>Study room booking app</h3>
           <p>Web app for booking study rooms and Library of Things items, with check-in on entrance tablets. Built on Alma booking and APIs.</p>
-          <a class="visit" href="#projects">Project details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+          <a class="visit" href="#projects" data-panel-link="4">Project details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
         </div>
       </div>
     </div>
@@ -425,7 +431,7 @@
         <div class="bridge-col reveal" style="--accent:var(--teal)">
           <h3>Library systems</h3>
           <ul>
-            <li>Alma</li><li>Primo VE / NDE</li><li>SUSHI / COUNTER</li><li>MARC21 / RDA</li><li>DSpace</li><li>EZproxy / Shibboleth</li><li>Alma APIs</li>
+            <li>Alma</li><li>Primo VE / NDE</li><li>SUSHI / COUNTER</li><li>MARC21 / RDA</li><li>DSpace</li><li>EZproxy / Shibboleth</li><li>Azure AD</li><li>Alma APIs</li>
           </ul>
         </div>
         <div class="bridge-col reveal" style="--accent:var(--blue)">
@@ -456,13 +462,13 @@
           <span class="tl-dot"></span>
           <span class="tl-years">2022 – 2026</span>
           <h3>Royal College of Surgeons in Ireland (RCSI), Bahrain</h3>
-          <p>Manager, Library Digital Initiatives, Services &amp; Systems. Built LAIRA; led Heritage → Alma/Primo VE and Primo VE → NDE migrations.</p>
+          <p>Manager, Library Digital Initiatives, Services &amp; Systems. Built LAIRA; led Heritage → Alma/Primo VE and Primo VE → NDE migrations. Built a self-hosted EZproxy server from scratch.</p>
         </div>
         <div class="tl-row" style="--accent:var(--amber)">
           <span class="tl-dot"></span>
           <span class="tl-years">2013 – 2022</span>
           <h3>King Fahd University of Petroleum and Minerals (KFUPM), Saudi Arabia</h3>
-          <p>Librarian, Systems &amp; E-Resources. Symphony → Sierra migration, RFID, e-resources.</p>
+          <p>Librarian, Systems &amp; E-Resources. Symphony → Sierra migration, RFID, e-resources. Self-hosted EZproxy for off-campus access, set up in-house.</p>
         </div>
         <div class="tl-row" style="--accent:var(--pink)">
           <span class="tl-dot"></span>
@@ -479,7 +485,7 @@
       <div class="section-head reveal">
         <span class="kicker">Case studies</span>
         <h2 class="section-title">Selected projects</h2>
-        <p class="section-sub">Four projects built and maintained end to end. Click one to see the detail.</p>
+        <p class="section-sub">Five projects built and maintained end to end. Click one to see the detail.</p>
       </div>
       <div class="project-shell reveal">
         <div class="tab-list" role="tablist" aria-label="Projects">
@@ -487,6 +493,7 @@
           <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-2" data-panel="2"><span class="n">02</span>HSM Research Dashboard</button>
           <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-3" data-panel="3"><span class="n">03</span>Alma Analytics visualizations</button>
           <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-4" data-panel="4"><span class="n">04</span>Study room booking app</button>
+          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-5" data-panel="5"><span class="n">05</span>EZproxy access server</button>
         </div>
         <div>
           <div class="tab-panel active" id="panel-1" role="tabpanel">
@@ -510,6 +517,11 @@
             <h3>Study room booking app</h3>
             <p>A web app in development for booking study rooms and Library of Things items, with check-in on tablets at the entrance. It uses Alma's booking functionality and extends it through the Alma APIs.</p>
             <div class="stack-row"><span>Next.js</span><span>Supabase</span><span>Vercel</span><span>Alma APIs</span></div>
+          </div>
+          <div class="tab-panel" id="panel-5" role="tabpanel">
+            <h3>EZproxy access server</h3>
+            <p>Set up and ran self-hosted EZproxy servers for off-campus access to subscribed e-resources, at KFUPM (2015 to 2022) and RCSI Bahrain (2022 to 2026), making full use of EZproxy's features. Each was configured in-house, without external support or formal training. At RCSI the server was built from scratch with Shibboleth and Azure AD sign-in and group-based access for alumni.</p>
+            <div class="stack-row"><span>EZproxy</span><span>Shibboleth</span><span>Azure AD</span><span>Group-based access</span></div>
           </div>
         </div>
       </div>
@@ -636,6 +648,14 @@
       panels.forEach(function(p){ p.classList.remove('active'); });
       btn.classList.add('active'); btn.setAttribute('aria-selected','true');
       document.getElementById('panel-' + btn.dataset.panel).classList.add('active');
+    });
+  });
+
+  // Card links that open a project tab
+  document.querySelectorAll('[data-panel-link]').forEach(function(a){
+    a.addEventListener('click', function(){
+      var b = document.querySelector('.tab-btn[data-panel="' + a.getAttribute('data-panel-link') + '"]');
+      if(b) b.click();
     });
   });
 
